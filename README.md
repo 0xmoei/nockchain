@@ -176,8 +176,9 @@ screen -S miner
 ```
 * Start a Miner
 ```bash
-nockchain --mining_pubkey <your_pubkey> --mine
+nockchain --mining-pubkey PUBLIC_KEY --mine --peer /ip4/95.216.102.60/udp/3006/quic-v1 --peer /ip4/65.108.123.225/udp/3006/quic-v1 --peer /ip4/65.109.156.108/udp/3006/quic-v1 --peer /ip4/65.21.67.175/udp/3006/quic-v1 --peer /ip4/65.109.156.172/udp/3006/quic-v1 --peer /ip4/34.174.22.166/udp/3006/quic-v1 --peer /ip4/34.95.155.151/udp/30000/quic-v1 --peer /ip4/34.18.98.38/udp/30000/quic-v1
 ```
+* Replace `PUBLIC_KEY`.
 * Wait for it to install.
 * To minimize screen:  `Ctrl` + `A` + `D`
 
