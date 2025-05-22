@@ -112,29 +112,37 @@ cp .env_example .env
 * Build: (takes time depending on your hardware.)
 ```bash
 make install-hoonc
+
+export PATH="$HOME/.cargo/bin:$PATH"
 ```
 ```bash
 make build
+
+export PATH="$HOME/.cargo/bin:$PATH"
 ```
 ```bash
 make install-nockchain-wallet
+
+export PATH="$HOME/.cargo/bin:$PATH"
 ```
 ```bash
 make install-nockchain
+
+export PATH="$HOME/.cargo/bin:$PATH"
 ```
 
 ## Step 5: Setup Wallet
 Make sure you are in `nockchain` directory.
 * **Set PATH:**
 ```bash
-export PATH="$PATH:$(pwd)/target/release"
+export PATH="$HOME/.cargo/bin:$PATH"
 ```
 * **Create wallet:**
 ```bash
 nockchain-wallet keygen
 ```
 * Save `memo`, `private key` & `public key` of your wallet.
-> Note: After every terminal restart, Ensure you execute these two commands before executing wallet commands again: `cd nockchain` & `export PATH="$PATH:$(pwd)/target/release"`.  By doing this, you won't get Error: `wallet: command not found`.
+> Note: After every terminal restart, Ensure you execute these two commands before executing wallet commands again: `cd nockchain` & `export PATH="$HOME/.cargo/bin:$PATH"`.  By doing this, you won't get Error: `wallet: command not found`.
 
 * Replace the value of `MINING_PUBKEY=` in `.env` with your own Public Key:
 ```bash
