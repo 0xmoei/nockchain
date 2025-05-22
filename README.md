@@ -170,16 +170,13 @@ sudo ufw allow 3006/tcp
 ```
 
 ### Step 8: Run Miner
-Mining Genesis block needs to **"Setup a script + a bitcoin rpc"**. If want to bypass mining the Genesis block, then continue the following steps. If want to mine Genesis block, then Follow step [Mine Genesis Block](https://github.com/0xmoei/nockchain/blob/main/README.md#mining-genesis-block) first.
-
 * Open a screen:
 ```bash
 screen -S miner
 ```
 * Start a Miner
 ```bash
-# Bypassing genesis block
-make run-nockchain
+nockchain --mining_pubkey <your_pubkey> --mine
 ```
 * Wait for it to install.
 * To minimize screen:  `Ctrl` + `A` + `D`
@@ -219,7 +216,7 @@ screen -XS miner quit
  
 ---
 
-# Mining Genesis Block
+# Mining Genesis Block (Genesis Block is Miner already)
 
 ## Step 1: Get BTC Mainnet RPC -- (Mine Genesis Block)
 If you want to join from **Genesis Block #0**, then you need to connect your Miner to a BTC corenode.
