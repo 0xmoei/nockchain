@@ -216,10 +216,10 @@ screen -XS miner quit
  
 ---
 
-# Mining Genesis Block (Genesis Block is Miner already)
-
+# Mining Genesis Block
+############### Genesis Block is Miner already ##################
 ## Step 1: Get BTC Mainnet RPC -- (Mine Genesis Block)
-If you want to join from **Genesis Block #0**, then you need to connect your Miner to a BTC corenode.
+If you want to join from **Genesis Block #0**, then you need to connect your Mined to a BTC corenode.
 * 1- Get your free and private BTC Mainnet RPC from [QuickNode](https://dashboard.quicknode.com/)
   * Save your `RPC_URL` + `RPC_TOKEN`
 
