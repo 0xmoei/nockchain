@@ -168,6 +168,7 @@ sudo ufw enable
 sudo ufw allow 3005/tcp
 sudo ufw allow 3006/tcp
 ```
+* Note: For Local systems who are using a home router network which is mostly behind NAT, they need to forward ports. Ask chatgpt until I get the chance to write a guide for it.
 
 ### Step 8: Run Miner
 * Open a screen:
@@ -181,6 +182,8 @@ nockchain --mining-pubkey PUBLIC_KEY --mine --peer /ip4/95.216.102.60/udp/3006/q
 * Replace `PUBLIC_KEY`.
 * Wait for it to install.
 * To minimize screen:  `Ctrl` + `A` + `D`
+
+* Note: It's already in early stage, commands and running methods in this guide are subject to be changed.
 
 ### Useful Commands:
 * If you ever stopped your Miner, to restart it again, delete old data files first:
@@ -217,8 +220,8 @@ screen -XS miner quit
  
 ---
 
-# Mining Genesis Block
-############### Genesis Block is Mined already ##################
+# Mining Genesis Block [Deprecated]
+############### Deprecated -- Genesis Block is Mined already ##################
 ## Step 1: Get BTC Mainnet RPC -- (Mine Genesis Block)
 If you want to join from **Genesis Block #0**, then you need to connect your Mined to a BTC corenode.
 * 1- Get your free and private BTC Mainnet RPC from [QuickNode](https://dashboard.quicknode.com/)
