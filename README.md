@@ -92,6 +92,10 @@ source $HOME/.cargo/env
 
 ### Step 2: Delete Old Repo and Wipe All Data
 ```bash
+# kill miner screen
+screen -XS miner quit
+
+# remove nockchain
 rm -rf nockchain
 rm -rf .nockapp
 ```
@@ -161,7 +165,7 @@ Import wallet keys:
 ```bash
 nockchain-wallet import-keys --input keys.export
 ```
-* Make sure `keys.export` is in your current directory
+* Make sure `keys.export` is in your `nockchain` directory.
 
 ### Step 7: Open ports
 ```console
@@ -179,27 +183,48 @@ sudo ufw allow 3006/tcp
 * Note: For Local systems who are using a home router network which is mostly behind NAT, they need to forward ports. Ask chatgpt until I get the chance to write a guide for it.
 
 ### Step 8: Run Miner
-* Open a screen:
-```bash
-screen -S miner
-```
-* Start a Miner
-```bash
-nockchain --mining-pubkey PUBLIC_KEY --mine --peer /ip4/95.216.102.60/udp/3006/quic-v1 --peer /ip4/65.108.123.225/udp/3006/quic-v1 --peer /ip4/65.109.156.108/udp/3006/quic-v1 --peer /ip4/65.21.67.175/udp/3006/quic-v1 --peer /ip4/65.109.156.172/udp/3006/quic-v1 --peer /ip4/34.174.22.166/udp/3006/quic-v1 --peer /ip4/34.95.155.151/udp/30000/quic-v1 --peer /ip4/34.18.98.38/udp/30000/quic-v1
+### Currently, min 128GB for Linux and min 16GB for Mac
+* First, Make sure you are in nockchain directory: `cd ~/nockchain`
+
+* The following method will be for running multiple miner instances on a server, you can repeat it by inscreasing `n` numbers by `n+1`
+
+Run Miner 1:
+```console
+# create directory
+mkdir miner1 && cd miner1
+
+# open screen
+screen -S miner1
+
+# start miner
+RUST_LOG=info,nockchain=info,nockchain_libp2p_io=info,libp2p=info,libp2p_quic=info \
+MINIMAL_LOG_FORMAT=true \
+nockchain --mining-pubkey PUBLIC_KEY --mine
 ```
 * Replace `PUBLIC_KEY`.
 * Wait for it to install.
 * To minimize screen:  `Ctrl` + `A` + `D`
 
+
 * Note: It's already in early stage, commands and running methods in this guide are subject to be changed.
+* Note 2: Currently, min 128GB for Linux and min 16GB for Mac
+* Note 3: Wait until you get `generating new candidate` for block production.
+* Note 4: You should not get `kernel` Could not load mining kernel, which means you are out of RAM.
+* Note 5: `Dial timeout` errors are currently normal.
+* Note 6: if seeing `command: timer` repeatadly, re-run.
+* Note 7: I'll update with a configuration to run on `Linux` with lower 128GB RAM.
 
 ### Useful Commands:
+Restart Miner:
 * If you ever stopped your Miner, to restart it again, delete old data files first:
 ```bash
 rm -rf ./.data.nockchain .socket/nockchain_npc.sock
 ```
+* Make sure you are in the specific miner's directory you want to restart .e.g `miner1`, `miner2`, etc.
 
+Screen commands
 * Ensure screens do not overlap. Before opening or switching to another screen, minimize or close the current screen.
+* Replace `miner` with your miner's screen name .e.g `miner1`, `miner2`, etc.
 ```console
 # Return screen
 screen -r miner
