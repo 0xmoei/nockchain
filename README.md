@@ -211,8 +211,7 @@ nockchain --mining-pubkey PUBLIC_KEY --mine
 * Note 3: Wait until you get `generating new candidate` for block production.
 * Note 4: You should not get `kernel` Could not load mining kernel, which means you are out of RAM.
 * Note 5: `Dial timeout` errors are currently normal.
-* Note 6: if seeing `command: timer` repeatadly, re-run.
-* Note 7: I'll update with a configuration to run on `Linux` with lower 128GB RAM.
+* Note 6: I'll update with a configuration to run on `Linux` with lower 128GB RAM.
 
 ### Useful Commands:
 Restart Miner:
