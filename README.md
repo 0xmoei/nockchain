@@ -197,7 +197,8 @@ nockchain --mine --mining-pubkey PUBLIC_KEY
 ![image](https://github.com/user-attachments/assets/61730f44-c55c-4452-918c-b216982f2033)
 
 * To minimize screen:  `Ctrl` + `A` + `D`
-
+* Now, You can run more Miner instances by increasing +1 to the numbers of run command.
+* Miner's highly consuming RAM, keep watching your RAM usage with command: `htop`
 
 ### Useful Commands:
 Restart Miner:
