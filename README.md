@@ -190,7 +190,6 @@ RUST_LOG=info,nockchain=info,nockchain_libp2p_io=info,libp2p=info,libp2p_quic=in
 MINIMAL_LOG_FORMAT=true \
 nockchain --mine \
 --mining-pubkey PUB_KEY \
---bind /ip4/0.0.0.0/udp/30003/quic-v1 \
 --peer /ip4/95.216.102.60/udp/3006/quic-v1 \
 --peer /ip4/65.108.123.225/udp/3006/quic-v1 \
 --peer /ip4/65.109.156.108/udp/3006/quic-v1 \
@@ -202,7 +201,6 @@ nockchain --mine \
 --peer /ip4/96.230.252.205/udp/3006/quic-v1 \
 --peer /ip4/94.205.40.29/udp/3006/quic-v1 \
 --peer /ip4/159.112.204.186/udp/3006/quic-v1 \
---peer /ip4/88.0.59.61/udp/3006/quic-v1 \
 --peer /ip4/217.14.223.78/udp/3006/quic-v1
 ```
 * Replace `PUBLIC_KEY`.
