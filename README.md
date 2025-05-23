@@ -191,10 +191,10 @@ MINIMAL_LOG_FORMAT=true \
 nockchain --mining-pubkey PUBLIC_KEY --mine
 ```
 * Replace `PUBLIC_KEY`.
-* Wait for it to install.
+* If you are getting `generating new candidate`, then you are sucessfully mining blocks!
+* No worry if you are getting Errors like `command: timer`, `ConnectionError`, etc.
 * To minimize screen:  `Ctrl` + `A` + `D`
 
-If you are getting `generating new candidate`, then you are sucessfully mining blocks!
 
 ### Useful Commands:
 Restart Miner:
