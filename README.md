@@ -258,7 +258,7 @@ screen -XS miner quit
 ---
 
 ### Get balance
-Make sure you are in a miner directory to get connected to the network when executing this command .e.g (cd ~/nockchain/miner1`)
+Make sure you are in a miner directory to get connected to the network when executing this command .e.g (`cd ~/nockchain/miner1`)
 ```
 nockchain-wallet --nockchain-socket .socket/nockchain_npc.sock list-notes
 ```
