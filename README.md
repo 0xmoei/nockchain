@@ -167,22 +167,9 @@ nockchain-wallet import-keys --input keys.export
 ```
 * Make sure `keys.export` is in your `nockchain` directory.
 
-### Step 7: Open ports
-```console
-# Allow ssh port
-sudo ufw allow ssh
-sudo ufw allow 22
-
-# Enable firewall
-sudo ufw enable
-
-# Open ports
-sudo ufw allow 3005/tcp
-sudo ufw allow 3006/tcp
-```
 * Note: For Local systems who are using a home router network which is mostly behind NAT, they need to forward ports. Ask chatgpt until I get the chance to write a guide for it.
 
-### Step 8: Run Miner
+### Step 7: Run Miner
 ### Currently, min 128GB for Linux and min 16GB for Mac
 * First, Make sure you are in nockchain directory: `cd ~/nockchain`
 
