@@ -172,8 +172,14 @@ nockchain-wallet import-keys --input keys.export
 * Note: For Local systems who are using a home router network which is mostly behind NAT, they need to forward ports. Ask chatgpt until I get the chance to write a guide for it.
 
 ### Step 7: Run Miner
-* Enable memory overcommit with this: `sudo sysctl -w vm.overcommit_memory=1`
-* First, Make sure you are in nockchain directory: `cd ~/nockchain`
+* Enable memory overcommit with this:
+```bash
+sudo sysctl -w vm.overcommit_memory=1
+```
+* First, Make sure you are in nockchain directory:
+```bash
+cd ~/nockchain
+```
 
 * The following method will be for running multiple miner instances on a server, you can repeat it by inscreasing `n` numbers by `n+1`
 
