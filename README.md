@@ -193,6 +193,9 @@ nockchain --mining-pubkey PUBLIC_KEY --mine
 * Replace `PUBLIC_KEY`.
 * If you are getting `generating new candidate`, then you are sucessfully mining blocks!
 * No worry if you are getting Errors like `command: timer`, `ConnectionError`, etc.
+
+![image](https://github.com/user-attachments/assets/61730f44-c55c-4452-918c-b216982f2033)
+
 * To minimize screen:  `Ctrl` + `A` + `D`
 
 
