@@ -257,85 +257,14 @@ screen -XS miner quit
 
 ---
 
-### Connect to Peers
-xxx
- 
----
-
-# Mining Genesis Block [Deprecated]
-############### Deprecated -- Genesis Block is Mined already ##################
-## Step 1: Get BTC Mainnet RPC -- (Mine Genesis Block)
-If you want to join from **Genesis Block #0**, then you need to connect your Mined to a BTC corenode.
-* 1- Get your free and private BTC Mainnet RPC from [QuickNode](https://dashboard.quicknode.com/)
-  * Save your `RPC_URL` + `RPC_TOKEN`
-
-![image](https://github.com/user-attachments/assets/931921cf-7bd0-43d4-81f6-d21514b9c807)
-
-
-* 2- Check your RPC sync and connection status:
+### Get balance
+Make sure you are in a miner directory to get connected to the network when executing this command .e.g (cd ~/nockchain/miner1`)
 ```
-curl -X POST https://long-quick-shape.btc.quiknode.pro/{your_rpc_token} \
--d '{
-      "id": "hmm",
-      "method": "getindexinfo",
-      "params": []
-}'
+nockchain-wallet --nockchain-socket .socket/nockchain_npc.sock list-notes
 ```
-* Replace `https://long-quick-shape.btc.quiknode.pro/{your_rpc_token}` with your bitcoin `RPC_URL` + `RPC_TOKEN`.
-
-## Step 2: nginx Proxy for Bitcoin JSON-RPC
+If you got balance, then the response is like this:
 ```
-sudo apt update
-sudo apt install nginx
+- name: [first='xxxxx' last='xxxxx']
+- assets: 2.576.980.378
+- source: [p=[BLAH] is-coinbase=%.y]
 ```
-```
-sudo nano -p /etc/nginx/conf.d/btc-proxy.conf
-```
-* Paste this. Replace `RPC_URL` & `RPC_TOKEN`
-```server {
-    listen 8332;
-
-    location / {
-        proxy_pass https://RPC_URL/RPC_TOKEN/;
-        proxy_set_header Host https://RPC_URL;
-        proxy_http_version 1.1;
-        proxy_set_header Connection "";
-        proxy_ssl_protocols TLSv1.2 TLSv1.3;
-        proxy_ssl_server_name on;
-    }
-}
-```
-```
-sudo nginx -t
-```
-```
-sudo systemctl reload nginx
-```
-```
-sudo nginx -s reload
-```
-
-## Step 3: Get local BTC RPC
-* Your Bitcoin RPC client is now: `http://127.0.0.1:8332/`
-
-* Try a simple request to get block number:
-```bash
-curl -v -X POST http://127.0.0.1:8332/ \
-  -H 'content-type: application/json' \
-  -d '{
-      "id": "test",
-      "method": "getblockchaininfo",
-      "params": []
-  }'
-```
-
-## Step 4: Run Miner (Genesis Mine)
-```
-screen -S miner
-```
-* Replace: `BTC_TOKEN` & `PUB_KEY`:
-```
-nockchain --btc-node-url="http://127.0.0.1:8332/" --btc-username="BTC_TOKEN" --btc-password="x" --genesis-watcher --mine --mining-pubkey="PUB_KEY"
-```
-
-Now continue from Step: [Useful commands](https://github.com/0xmoei/nockchain/blob/main/README.md#useful-commands)
