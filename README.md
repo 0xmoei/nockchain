@@ -188,7 +188,7 @@ screen -S miner1
 # start miner
 RUST_LOG=info,nockchain=info,nockchain_libp2p_io=info,libp2p=info,libp2p_quic=info \
 MINIMAL_LOG_FORMAT=true \
-nockchain --mining-pubkey PUBLIC_KEY --mine
+nockchain --mine --mining-pubkey PUBLIC_KEY 
 ```
 * Replace `PUBLIC_KEY`.
 * If you are getting `generating new candidate`, then you are sucessfully mining blocks!
