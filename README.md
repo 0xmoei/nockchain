@@ -89,6 +89,10 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```bash
 source $HOME/.cargo/env
 ```
+* Enable memory overcommit:
+```bash
+sudo sysctl -w vm.overcommit_memory=1
+```
 
 ### Step 2: Delete Old Repo and Wipe All Data
 ```bash
@@ -168,7 +172,7 @@ nockchain-wallet import-keys --input keys.export
 * Note: For Local systems who are using a home router network which is mostly behind NAT, they need to forward ports. Ask chatgpt until I get the chance to write a guide for it.
 
 ### Step 7: Run Miner
-### Currently, min 128GB for Linux and min 16GB for Mac
+* Enable memory overcommit with this: `sudo sysctl -w vm.overcommit_memory=1`
 * First, Make sure you are in nockchain directory: `cd ~/nockchain`
 
 * The following method will be for running multiple miner instances on a server, you can repeat it by inscreasing `n` numbers by `n+1`
@@ -190,13 +194,7 @@ nockchain --mining-pubkey PUBLIC_KEY --mine
 * Wait for it to install.
 * To minimize screen:  `Ctrl` + `A` + `D`
 
-
-* Note: It's already in early stage, commands and running methods in this guide are subject to be changed.
-* Note 2: Currently, min 128GB for Linux and min 16GB for Mac
-* Note 3: Wait until you get `generating new candidate` for block production.
-* Note 4: You should not get `kernel` Could not load mining kernel, which means you are out of RAM.
-* Note 5: `Dial timeout` errors are currently normal.
-* Note 6: I'll update with a configuration to run on `Linux` with lower 128GB RAM.
+If you are getting `generating new candidate`, then you are sucessfully mining blocks!
 
 ### Useful Commands:
 Restart Miner:
