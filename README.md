@@ -121,8 +121,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 ```
 ```bash
 make build
-
-export PATH="$HOME/.cargo/bin:$PATH"
 ```
 ```bash
 make install-nockchain-wallet
