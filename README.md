@@ -14,11 +14,6 @@ The team has released a Public Testnet to run a ***local testnet node*** and a *
 
 ---
 
-## Nock Mining Dashboard
-This community-driven dashboard, [**NockStats**](https://nockstats.com/) has many good features like: Wallet balance, Trading, Tokenomics, Calculator, etc.
-
----
-
 ## How to Mine
 * The mining terms is exactly same a Bitcoin PoW mining.
 * More computational power = More rewards
