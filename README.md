@@ -187,7 +187,6 @@ mkdir miner1 && cd miner1
 screen -S miner1
 
 # start miner
-source .env \
 RUST_LOG=info,nockchain=info,nockchain_libp2p_io=info,libp2p=info,libp2p_quic=info \
 MINIMAL_LOG_FORMAT=true \
 nockchain --mine \
