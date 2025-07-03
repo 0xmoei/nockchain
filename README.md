@@ -222,6 +222,34 @@ nockchain --mine \
 * Now, You can run more Miner instances by increasing +1 to the numbers of run command.
 * Miner's highly eating your RAM, keep watching your RAM usage with command: `htop`, before running more instances.
 
+---
+
+## Import blockchain sync state
+You can import `state.jam` (snapshot of blockchain state) at miner startup to bypass syncing mined blocks from block 0
+
+## Official state.jam
+Offcial `state.jam` provided by team can be found [here](https://drive.google.com/drive/folders/1aEYZwmg4isTuYXWFn9gKPl92-pYndwUw)
+
+To download:
+```console
+# install gdown
+pip3 install gdown
+
+# replace <google-drive-file-url> with your file url
+gdown <google-drive-file-url>
+```
+
+### Import
+Add this flag to your run command
+```
+--state-jam <state.jam-path>
+```
+* Replace `<state.jam-path>` with your `state.jam` path
+* Example: If downloaded in nockchain directory your flag will be `--state-jam ~/nockchain`
+
+
+---
+
 ### Useful Commands:
 Restart Miner:
 * If you ever stopped your Miner, to restart it again, delete old data files first:
