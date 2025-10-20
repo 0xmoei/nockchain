@@ -160,7 +160,7 @@ nockchain-wallet export-keys
 
 Import wallet keys:
 ```bash
-nockchain-wallet import-keys --input keys.export
+nockchain-wallet import-keys --file keys.export
 ```
 * Make sure `keys.export` is in your `nockchain` directory.
 
